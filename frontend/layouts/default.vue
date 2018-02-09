@@ -48,6 +48,7 @@ v-app(id="sandbox" :dark="dark" :light="!dark" standalone)
         },
         items: [
           { icon: 'settings', text: 'Mantenimiento', to: '/mantenimiento' },
+          { icon: 'person', text: 'Usuarios', to: '/usuarios' },
         ],
         title: 'Administración Jeromotos'
       }
