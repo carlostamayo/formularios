@@ -1,0 +1,32 @@
+mutation IngresoRemoveItem(
+  $IngresoId: Int
+  $IngresoItemId: Int
+){
+  IngresoRemoveItem(
+    IngresoId: $IngresoId
+    IngresoItemId: $IngresoItemId
+  ){
+  	Id
+    Fecha
+    Numero
+    PeriodoId
+    Concepto
+    Total
+    Items {
+      Id
+      CuentaDebe {
+        Id
+        Type
+        Code
+        Name
+      }
+      CuentaHaber {
+        Id
+        Type
+        Code
+        Name
+      }
+      Monto
+    }
+  }
+}

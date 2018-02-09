@@ -1,0 +1,40 @@
+mutation IngresoAddItem(
+  $IngresoId: Int
+  $CuentaDebeId: Int
+  $CuentaHaberId: Int
+  $Monto: Float
+){
+  IngresoAddItem(
+    IngresoId: $IngresoId
+    CuentaDebeId: $CuentaDebeId
+    CuentaHaberId: $CuentaHaberId
+    Monto: $Monto
+  ){
+  	Id
+    Fecha
+    Numero
+    Periodo {
+      Id
+      Nombre
+      Estado
+    }
+    Concepto
+    Total
+    Items {
+      Id
+      CuentaDebe {
+        Id
+        Type
+        Code
+        Name
+      }
+      CuentaHaber {
+        Id
+        Type
+        Code
+        Name
+      }
+      Monto
+    }
+  }
+}

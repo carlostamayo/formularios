@@ -1,0 +1,27 @@
+mutation CreateSaldoInicial(
+  $PeriodoId: Int
+  $CuentaId: Int
+  $Monto: Float
+){
+  CreateSaldoInicial(
+    PeriodoId: $PeriodoId
+    CuentaId: $CuentaId
+    Monto: $Monto
+  )
+  {
+    Id
+    Periodo {
+      Id
+      Nombre
+      FechaInicial
+      FechaFinal
+    }
+    Cuenta {
+      Id
+      Code
+      Name
+      Type
+    }
+    Monto
+  }
+}

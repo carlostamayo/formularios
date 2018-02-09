@@ -1,0 +1,34 @@
+<?xml version="1.0" ?>
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="jeromotos" version="4">
+  <OBJECT>
+    <ID name="jeromotos" mc="Standard.Package" uid="b22ae863-be13-41ea-9496-9eb3720f1d11"/>
+    <PID name="jeromotos" mc="Standard.Project" uid="e78f636d-5ad1-469a-b138-7431c93c2c19"/>
+    <ATTRIBUTES>
+      <ATT name="IsInstantiable">false</ATT>
+      <ATT name="IsAbstract">false</ATT>
+      <ATT name="IsLeaf">false</ATT>
+      <ATT name="IsRoot">false</ATT>
+      <ATT name="Visibility">Public</ATT>
+      <ATT name="Name"><![CDATA[jeromotos]]></ATT>
+      <ATT name="status">1970354901745664</ATT>
+    </ATTRIBUTES>
+    <DEPENDENCIES>
+      <COMP relation="OwnedElement">
+        <COMPID name="Tipo" mc="Standard.Class" uid="b335075e-d33c-4a84-847e-a38d86d26f0f"/>
+        <COMPID name="Persona" mc="Standard.Class" uid="8f30fb46-a99e-4964-b434-5297552866a8"/>
+        <COMPID name="ServicioTaller" mc="Standard.Class" uid="80fc3dfd-dabe-450d-bd65-45d73f43027b"/>
+        <COMPID name="TablaMantenimiento" mc="Standard.Class" uid="e1d7f7f4-e7df-4934-bd10-120d57275092"/>
+        <COMPID name="Motocicleta" mc="Standard.Class" uid="9b676104-42cc-4e1e-b0cb-551bf6db3f31"/>
+        <COMPID name="Role" mc="Standard.Class" uid="70fac50b-b111-4996-8857-c4e583b043bf"/>
+        <COMPID name="OrdenEntrada" mc="Standard.Class" uid="9ae48580-0a87-4a6d-8423-093c8366bbce"/>
+        <COMPID name="OrdenSalida" mc="Standard.Class" uid="141a7869-9a82-4920-8a9b-0804c749cdfc"/>
+        <COMPID name="ListaChequeo" mc="Standard.Class" uid="25b50902-da75-43ef-8688-2b03ddc5077f"/>
+        <COMPID name="Historial" mc="Standard.Class" uid="9f00a011-83f2-48e6-bfb7-760822184856"/>
+      </COMP>
+      <COMP relation="Product">
+        <COMPID name="jeromotos Class diagram" mc="Standard.ClassDiagram" uid="4a314e33-108f-46f8-91d2-b0810b95b2bb"/>
+        <COMPID name="jeromotos Object diagram" mc="Standard.ObjectDiagram" uid="84d8febe-336f-4589-812e-b75e8b620536"/>
+      </COMP>
+    </DEPENDENCIES>
+  </OBJECT>
+</EXT>

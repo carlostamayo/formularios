@@ -1,0 +1,31 @@
+<?xml version="1.0" ?>
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="jeromotos Object diagram" version="4">
+  <OBJECT>
+    <ID name="jeromotos Object diagram" mc="Standard.ObjectDiagram" uid="84d8febe-336f-4589-812e-b75e8b620536"/>
+    <PID name="jeromotos" mc="Standard.Package" uid="b22ae863-be13-41ea-9496-9eb3720f1d11"/>
+    <ATTRIBUTES>
+      <ATT name="UiDataVersion">78</ATT>
+      <ATT name="UiData"><![CDATA[eJztU9tOAjEQ/ZVm3ynIzTVBDLCGGFcheEl8IrN0wGK3JW1R9u/tsqCCYYOGyItPbadzztzONC4WsSCvqA1X8tw7oSWPXDQbvWiKI0s4cyaP2GSG557SExorhoIryjhMNMQUGbdKU7V0pygwRmnN6r126sYZXZC9PRLDVOnhR9CS12z0tZqhtgmRELtYAhI1twFYcH+PIOa4SkLOhfCKzUZxDfgGvbOJQG+jhHJeCSb1N3SkNNIMu0d+HTAjYMjWwS4XdoDjPaPcOooVkuDCBtGVy3F5TS8MxzAXdqvIYlZOXuEaBVhkLo+tnt2kJvKaWtL2gGSgGd2YCfGrzB9jhIVKpT4uVGv+WcE/KWMhOq2hH9XLpVqlnt93AcZeS/UmQ4hQbKVwZzWXE2csLq25ZSiBV7Kj4pky3LoB/J6q88wF05gyhNykzVsdOxEhly9mf/f2JNDw5tIJIUG9KbpK7t6sN4VleENFyuBWZYPwbzblZ6gjy4yzHXoIujRsPV0Ohu1W57o76D3cBoeRyB6r93Von/L5IobqvxiOI4b7Xv/QKtj59Q5VLolC]]></ATT>
+      <ATT name="Name"><![CDATA[jeromotos Object diagram]]></ATT>
+      <ATT name="status">1970354901745664</ATT>
+    </ATTRIBUTES>
+    <DEPENDENCIES>
+      <COMP relation="Descriptor">
+        <OBJECT>
+          <ID name="" mc="Infrastructure.Note" uid="a50a7663-bcee-4201-98ba-7d7affe76663"/>
+          <ATTRIBUTES>
+            <ATT name="Content"></ATT>
+            <ATT name="MimeType"></ATT>
+            <ATT name="Name"></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <LINK relation="Model">
+              <FOREIGNID name="description" mc="Infrastructure.NoteType" uid="00000000-0000-3e81-0000-000000000000"/>
+            </LINK>
+          </DEPENDENCIES>
+        </OBJECT>
+      </COMP>
+    </DEPENDENCIES>
+  </OBJECT>
+</EXT>
