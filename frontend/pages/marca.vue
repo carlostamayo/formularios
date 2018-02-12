@@ -9,7 +9,7 @@
           <v-card-text>
             <span class="title">Información personal</span>
             <v-text-field
-              label="Marca"
+              label="perra"
               class="mt-5"
               v-model="rol"
               required
