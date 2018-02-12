@@ -51,7 +51,8 @@ v-app(id="sandbox" :dark="dark" :light="!dark" standalone)
           { icon: 'person', text: 'Usuarios', to: '/usuarios' },
           { icon: 'person', text: 'Roles', to: '/roles' },
           { icon: 'settings', text: 'Tipo Moto', to: '/tipoMoto' },
-          { icon: 'settings', text: 'Motocicleta', to: '/motocicleta' }
+          { icon: 'settings', text: 'Motocicleta', to: '/motocicleta' },
+          { icon: 'settings', text: 'Marca Motocicleta', to: '/marca' },
          ],
         title: 'Administración Jeromotos'
       }
