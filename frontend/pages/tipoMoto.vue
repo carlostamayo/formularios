@@ -10,12 +10,13 @@
             <span class="title">Información personal</span>
             <v-select
              label="Marca"
-             v-model="marca"
+             v-model="a1"
             :items="items"
+            v-bind:items="states"
             :error-messages="selectErrors"
             @change="$v.select.$touch()"
             @blur="$v.select.$touch()"
-            required
+            required autocomplete
             ></v-select>
             <v-text-field
               label="Referencia"
@@ -25,7 +26,7 @@
             <v-text-field
               label="Cilindraje"
               v-model="cilindraje"
-              required
+              required 
             ></v-text-field>
             <small>*Estos campos son requeridos</small>
           </v-card-text>
@@ -50,6 +51,23 @@ export default {
       marca:null,
       referencia:null,
       cilindraje:null,
+      a1: null,
+        states: [
+          'Alabama','Alaska','American Samoa','Arizona',
+          'Arkansas','California','Colorado','Connecticut',
+          'Delaware','District of Columbia','Federated States of Micronesia',
+          'Florida','Georgia','Guam','Hawaii','Idaho',
+          'Illinois','Indiana','Iowa','Kansas','Kentucky',
+          'Louisiana','Maine','Marshall Islands','Maryland',
+          'Massachusetts','Michigan','Minnesota','Mississippi',
+          'Missouri','Montana','Nebraska','Nevada',
+          'New Hampshire','New Jersey','New Mexico','New York',
+          'North Carolina','North Dakota','Northern Mariana Islands','Ohio',
+          'Oklahoma','Oregon','Palau','Pennsylvania','Puerto Rico',
+          'Rhode Island','South Carolina','South Dakota','Tennessee',
+          'Texas','Utah','Vermont','Virgin Island','Virginia',
+          'Washington','West Virginia','Wisconsin','Wyoming'
+        ],
     }
   },
   methods: {
@@ -60,3 +78,4 @@ export default {
   }
 }
 </script>
+

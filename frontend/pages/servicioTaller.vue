@@ -4,16 +4,18 @@
       <v-flex xs12 md6 lg12 offset-md3>
         <v-card>
           <v-toolbar color="red" dark>
-            <v-toolbar-title>Marca Motocicleta</v-toolbar-title>
+            <v-toolbar-title>Servicio Taller</v-toolbar-title>
           </v-toolbar>
           <v-card-text>
             <span class="title">Información personal</span>
             <v-text-field
-              label="Marca"
+              label="Servicio"
               class="mt-5"
-              v-model="rol"
+              v-model="servicio"
               required
             ></v-text-field>
+            
+            
             <small>*Estos campos son requeridos</small>
           </v-card-text>
         </v-card>
@@ -34,7 +36,7 @@
 export default {
   data () {
     return {
-      marca:null,
+      servicio:null,
     }
   },
   methods: {
