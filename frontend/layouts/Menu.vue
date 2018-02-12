@@ -39,12 +39,12 @@
   </v-toolbar fixed>
   <main>
     <v-container fluid mb-5 pt-0>
-      .nuxt
+      <nuxt/>
     </v-container >
    </main> 
   <v-footer fixed>
     <span> © {{ new Date().getFullYear() }} </span> Jose Luis Cáceres Escudero
-  </v-footer fixed>
+  </v-footer >
 </v-app>
 </template>
 
@@ -68,7 +68,7 @@
             icon: 'local_activity',
             title: 'Usuario',
             items: [
-              { title: 'Cliente' },
+              { title: 'Cliente' , to: '/mantenimiento' },
               { title: 'Tecnico' },
               { title: 'Administrador' },
             ]
@@ -77,7 +77,7 @@
             icon: 'local_activity',
             title: 'Vehiculo',
             items: [
-              { title: 'Motocicleta' },
+              { title: 'Motocicleta',to: '/motocicleta' },
               { title: 'Tipo Motocicleta' },
               { title: 'Marca' },
             ]

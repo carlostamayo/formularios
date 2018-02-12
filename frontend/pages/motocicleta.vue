@@ -4,13 +4,23 @@
       <v-flex xs12 md6 offset-md3 >
         <v-card>
           <v-toolbar color="red" dark>
-            <v-toolbar-title>Tipo Motocicleta</v-toolbar-title>
+            <v-toolbar-title>Motocicleta</v-toolbar-title>
           </v-toolbar>
           <v-card-text>
             <span class="title">Información personal</span>
+            <v-text-field
+              label="Placa"
+              v-model="placa"
+              required
+            ></v-text-field>
+            <v-text-field
+              label="Color"
+              v-model="color"
+              required
+            ></v-text-field>
             <v-select
-             label="Marca"
-             v-model="marca"
+             label="Referencia"
+             v-model="referencia"
             :items="items"
             :error-messages="selectErrors"
             @change="$v.select.$touch()"
@@ -18,14 +28,14 @@
             required
             ></v-select>
             <v-text-field
-              label="Referencia"
-              v-model="referncia"
+              label="Propietario"
+              v-model="propietario"
               required
             ></v-text-field>
             <v-text-field
-              label="Cilindraje"
-              v-model="cilindraje"
-              required
+              label="Km Promedio Diario"
+              v-model="promedio"
+              disabled nofocus
             ></v-text-field>
             <small>*Estos campos son requeridos</small>
           </v-card-text>
@@ -47,8 +57,11 @@
 export default {
   data () {
     return {
-      
-      
+      placa:null,
+      color:null,
+      referencia:null,
+      propietario:null,
+      promedio:0
     }
   },
   methods: {
