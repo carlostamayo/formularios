@@ -4,7 +4,7 @@
       <v-flex xs12 md6 offset-md3>
         <v-card>
           <v-toolbar color="red" dark>
-            <v-toolbar-title>Datos de usuario</v-toolbar-title>
+            <v-toolbar-title>Roles</v-toolbar-title>
           </v-toolbar>
           <v-card-text>
             <span class="title">Información personal</span>
