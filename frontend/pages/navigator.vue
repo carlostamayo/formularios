@@ -4,7 +4,7 @@
       class="pb-0"
       permanent
       absolute
-      height="100%"
+      height="85%"
       light
     >
       <v-list dense>
