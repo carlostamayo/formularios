@@ -47,14 +47,12 @@ v-app(id="sandbox" :dark="dark" :light="!dark" standalone)
           fixed: true
         },
         items: [
+          { icon: 'build', text: 'Orden de Trabajo', to: '/ordenTrabajo' },
           { icon: 'settings', text: 'Mantenimiento', to: '/mantenimiento' },
           { icon: 'person', text: 'Usuarios', to: '/usuarios' },
           { icon: 'person', text: 'Roles', to: '/roles' },
           { icon: 'settings', text: 'Tipo Moto', to: '/tipoMoto' },
-          { icon: 'settings', text: 'Motocicleta', to: '/motocicleta' },
-          { icon: 'settings', text: 'Marca', to: '/marca' },
-          { icon: 'settings', text: 'Tabla Mantenimiento', to: '/tablaMantenimiento' },
-          { icon: 'settings', text: 'Servicio Taller', to: '/servicioTaller' }
+          { icon: 'motorcycle', text: 'Motocicleta', to: '/motocicleta' }
          ],
         title: 'Administración Jeromotos'
       }
