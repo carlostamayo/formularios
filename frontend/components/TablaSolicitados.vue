@@ -31,32 +31,32 @@
         ],
         items: [
           {
-            name: 'HERRAMIENTAS', 
+            name: 'Cambio de Aceite', 
             modelo: "Solicitado",
             value: true, 
           },
           {
-            name: 'ESPEJOS',
+            name: 'Calibrar Valvulas',
             modelo: "SI",
           },
           {
-            name: 'LLAVES',
+            name: 'Cambiar Filtro Aceite',
             modelo: "SI",
           },
           {
-           name: 'TAPAS LATERALES',
+           name: 'Cambiar Bujia',
             modelo: "SI",
           },
           {
-            name: 'COCAS',
+            name: 'Cambia Aceite Hidraulico',
             modelo: "SI",
           },
           {
-            name: 'TAPA GASOLINA Y/O ACEITE',
+            name: 'Cambiar Liquido Frenos',
             modelo: "SI",
           },
           {
-            name: 'GUARDACADENA',
+            name: 'Cambiar Correa Transmision',
             modelo: "SI",
           },
           

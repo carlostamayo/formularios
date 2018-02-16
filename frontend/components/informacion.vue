@@ -216,6 +216,8 @@
         </v-dialog>
       </v-flex>
     </v-layout>
+    <v-divider></v-divider>
+
     <div>
     <v-card color="grey lighten-4" flat>
       <v-card-text>
