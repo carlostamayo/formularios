@@ -21,13 +21,16 @@ v-app(id="sandbox" :dark="dark" :light="!dark" standalone)
   v-toolbar(fixed)
     v-toolbar-side-icon(@click.native.stop="primaryDrawer.model = !primaryDrawer.model" v-if="primaryDrawer.type !== 'permanent'")
     v-toolbar-title {{ title }}
-
+    <v-spacer></v-spacer>
+    <v-btn icon>
+            <v-icon>search</v-icon>
+    </v-btn>
   main
     v-container(fluid mb-5 pt-0)
       nuxt
 
   v-footer(fixed)
-    <span> © {{ new Date().getFullYear() }} </span> Jose Luis Cáceres Escudero
+    <span> © {{ new Date().getFullYear() }} </span> Joiner Sánchez & Carlos Tamayo
 
 </template>
 
@@ -54,7 +57,8 @@ v-app(id="sandbox" :dark="dark" :light="!dark" standalone)
           { icon: 'settings', text: 'Tipo Moto', to: '/tipoMoto' },
           { icon: 'motorcycle', text: 'Motocicleta', to: '/motocicleta' }
          ],
-        title: 'Administración Jeromotos'
+        title: 'Administración Jeromotos',
+        icono:"build"
       }
     },
     methods: {
