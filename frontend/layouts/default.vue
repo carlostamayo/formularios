@@ -50,9 +50,11 @@ v-app(id="sandbox" :dark="dark" :light="!dark" standalone)
           fixed: true
         },
         items: [
+          { icon: 'build', text: 'Agregar Orden de Trabajo', to: '/agregarOrdenTrabajo' },
           { icon: 'build', text: 'Orden de Trabajo', to: '/ordenTrabajo' },
           { icon: 'settings', text: 'Mantenimiento', to: '/mantenimiento' },
           { icon: 'person', text: 'Usuarios', to: '/usuarios' },
+          { icon: 'person', text: 'AgregarUsuario', to: '/Agregarusuario' },
           { icon: 'person', text: 'Roles', to: '/roles' },
           { icon: 'settings', text: 'Tipo Moto', to: '/tipoMoto' },
           { icon: 'motorcycle', text: 'Motocicleta', to: '/motocicleta' }

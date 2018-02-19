@@ -238,7 +238,6 @@
         this.nombre=""
         this.telefono=""
         this.direccion=""
-        document.getElementById(textCedula).focus();
       },
       limpiarMoto(){
         this.placa=""
