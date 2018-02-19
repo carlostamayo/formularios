@@ -1,7 +1,7 @@
 <template>
   <div>
-   <v-layout wrap>
-    <v-btn dark fab class="cyan" @click.native="Agregar" v-model="abrir">
+   <v-layout wrap class="grey lighten-4">
+    <v-btn dark fab class="pink" @click.native="Agregar" v-model="abrir">
       <v-icon>add</v-icon>
     </v-btn>
     <v-flex x12 sm1></v-flex>
@@ -9,13 +9,14 @@
       <v-text-field
           label="Cedula"
           v-model="cedula"
-          @onkeypress="Agregar" 
+          v-on:keyup="Agregar"
       ></v-text-field>
       </v-flex xs12 sm1>
     <v-flex xs12 sm1></v-flex>
     <v-flex xs12 sm4>
       <v-text-field
          label="Nombre"
+         v-model="search"
       ></v-text-field>
       </v-flex>
       <v-spacer></v-spacer>
@@ -29,6 +30,7 @@
         :items="items"
         hide-actions
         class="elevation-1"
+        v-bind:search="search"
     >
       <template slot="items" scope="props">
         <td style="font-weight: bold;">{{ props.item.cedula }}</td>
@@ -56,6 +58,8 @@
   export default {
     data () {
       return {
+          cedula:null,
+          nombre:null,
           headers: [
           {
             text: 'Cedula',
@@ -85,7 +89,49 @@
         items: [
           {
             cedula:"1065864163",
+            nombre:"Jose del Carmen aristizabal zabaleta fernandez de la peña",
+            telefono:"3136817175",
+            direccion:"Calle 12 # 26-46",
+          },
+          {
+            cedula:"1065864163",
             nombre:"Carlos  Andres Tamayo Benjumea",
+            telefono:"3136817175",
+            direccion:"Calle 12 # 26-46",
+          },
+          {
+            cedula:"1065864163",
+            nombre:"Carlos  Andres Tamayo Benjumea",
+            telefono:"3136817175",
+            direccion:"Calle 12 # 26-46",
+          },
+          {
+            cedula:"1065864163",
+            nombre:"Carlos  Andres Tamayo Benjumea",
+            telefono:"3136817175",
+            direccion:"Calle 12 # 26-46",
+          },
+          {
+            cedula:"1065864163",
+            nombre:"Carlos  Andres Tamayo Benjumea",
+            telefono:"3136817175",
+            direccion:"Calle 12 # 26-46",
+          },
+          {
+            cedula:"1065864163",
+            nombre:"Carlos  Andres Tamayo Benjumea",
+            telefono:"3136817175",
+            direccion:"Calle 12 # 26-46",
+          },
+          {
+            cedula:"1065864163",
+            nombre:"Carlos  Andres Tamayo Benjumea",
+            telefono:"3136817175",
+            direccion:"Calle 12 # 26-46",
+          },
+          {
+            cedula:"1065864163",
+            nombre:"Jose del Carmen aristizabal zabaleta fernandez de la peña",
             telefono:"3136817175",
             direccion:"Calle 12 # 26-46",
           },

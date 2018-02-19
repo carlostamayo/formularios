@@ -18,7 +18,7 @@ v-app(id="sandbox" :dark="dark" :light="!dark" standalone)
         v-list-tile-content
           v-list-tile-title Salir
 
-  v-toolbar(fixed)
+  v-toolbar(fixed class="indigo white--text")
     v-toolbar-side-icon(@click.native.stop="primaryDrawer.model = !primaryDrawer.model" v-if="primaryDrawer.type !== 'permanent'")
     v-toolbar-title {{ title }}
     <v-spacer></v-spacer>
@@ -54,7 +54,7 @@ v-app(id="sandbox" :dark="dark" :light="!dark" standalone)
           { icon: 'build', text: 'Orden de Trabajo', to: '/ordenTrabajo' },
           { icon: 'settings', text: 'Mantenimiento', to: '/mantenimiento' },
           { icon: 'person', text: 'Usuarios', to: '/usuarios' },
-          { icon: 'person', text: 'AgregarUsuario', to: '/Agregarusuario' },
+          { icon: 'person', text: 'AgregarUsuario', to: '/agregarusuario' },
           { icon: 'person', text: 'Roles', to: '/roles' },
           { icon: 'settings', text: 'Tipo Moto', to: '/tipoMoto' },
           { icon: 'motorcycle', text: 'Motocicleta', to: '/motocicleta' }
