@@ -3,8 +3,8 @@
     <v-layout row wrap>
       <v-flex xs12 sm12 >
         <v-card>
-          <v-toolbar class="cyan" extended>
-            <v-toolbar-side-icon></v-toolbar-side-icon>
+          <v-toolbar class="cyan" >
+            <!--<v-toolbar-side-icon></v-toolbar-side-icon>-->
             <v-toolbar-title class="white--text">Prueba</v-toolbar-title>
             <v-fab-transition>
               <v-btn
@@ -24,7 +24,8 @@
           </v-toolbar>
           </v-card-text>
           	
-          	<v-card-text class="gray pa-3">
+          	<v-layout class="pa-3 pt-4">
+          	<v-card-text class="gray pb-0 pt-0 elevation-2">
             	<v-layout>
           			<v-flex xs12 sm2>
           				<v-text-field
@@ -38,30 +39,31 @@
           					class="chirrete-text-field"
           				></v-text-field>
           			</v-flex>
-          			<v-flex xs12 sm1>
-          				<v-btn>
+          			
+          				<v-spacer></v-spacer>
+          				<v-btn fab large icon>
           					<v-icon>search</v-icon>
           				</v-btn>
-          			</v-flex>
+          			
           		</v-layout>
           	</v-card-text>
-
-          	<v-layout v-if="abrir" class="pa-2">
-          		<v-card-text class="gray pa-3">
+          	</v-layout>
+          	<v-layout v-if="abrir" class="pa-3">
+          		<v-card-text class="gray pb-0 pt-0 elevation-2" >
             		<v-layout>
-          				<v-flex xs12 sm2>
+          				<v-flex xs12 sm3>
           					<v-text-field
           						label="Cedula"
           						class="chirrete-text-field"
           					></v-text-field>
           				</v-flex>
-          				<v-flex xs12 sm4>
+          				<v-flex xs12 sm3>
           					<v-text-field
           						label="Nombre"
           						class="chirrete-text-field"
           					></v-text-field>
           				</v-flex>
-          				<v-flex xs12 sm4>
+          				<v-flex xs12 sm3>
           					<v-text-field
           						label="Direccion"
           						class="chirrete-text-field"
@@ -73,19 +75,19 @@
             			</v-btn>
             		</v-layout>
           			<v-layout>
-          				<v-flex xs12 sm2>
+          				<v-flex xs12 sm3>
           					<v-text-field
           						label="Ciudad"
           						class="chirrete-text-field"
           					></v-text-field>
           				</v-flex>
-          				<v-flex xs12 sm4>
+          				<v-flex xs12 sm3>
           					<v-text-field
           						label="Telefono"
           						class="chirrete-text-field"
           					></v-text-field>
           				</v-flex>
-          				<v-flex xs12 sm4>
+          				<v-flex xs12 sm3>
           					<v-text-field
           						label="e-mail"
           						class="chirrete-text-field"

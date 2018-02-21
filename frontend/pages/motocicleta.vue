@@ -5,7 +5,7 @@
         <v-card>
           <v-toolbar class="cyan" >
             <!--<v-toolbar-side-icon></v-toolbar-side-icon>-->
-            <v-toolbar-title class="white--text">Servicio Taller</v-toolbar-title>
+            <v-toolbar-title class="white--text">Motocicleta</v-toolbar-title>
             <v-fab-transition>
               <v-btn
                 class="indigo"
@@ -24,124 +24,112 @@
           </v-toolbar>
           </v-card-text>
             
-            <v-layout class="pa-3 pt-4">
+          <v-layout class="pa-3 pt-4">
             <v-card-text class="gray pb-0 pt-0 elevation-2">
               <v-layout>
-                <v-flex xs12 sm4>
-                  <v-text-field
-                    label="Servicio Taller"
-                    class="chirrete-text-field"
-                  ></v-text-field>
-                </v-flex>
-                <!--<v-flex xs12 sm2>
-                  <v-select
-                    v-bind:items="states"
-                    v-model="a1"
-                    label="Marca"
-                    autocomplete
-                  ></v-select>
-                </v-flex>
                 <v-flex xs12 sm2>
                   <v-text-field
-                    label="Cilindraje"
+                    label="Placa"
                     class="chirrete-text-field"
                   ></v-text-field>
-                </v-flex>-->
-                
-                  <v-spacer></v-spacer>
-                  <v-btn fab large icon>
-                    <v-icon>search</v-icon>
-                  </v-btn>
-                
+                </v-flex>
+                <v-flex xs12 sm4>
+                  <v-text-field
+                    label="Propietario"
+                    class="chirrete-text-field"
+                  ></v-text-field>
+                </v-flex>
+                <v-spacer></v-spacer>
+                <v-btn fab large icon>
+                  <v-icon>search</v-icon>
+                </v-btn>
               </v-layout>
             </v-card-text>
-            </v-layout>
-            <v-layout v-if="abrir" class="pa-3">
-              <v-card-text class="gray pb-0 pt-0 elevation-2" >
+          </v-layout>
+          
+          <v-layout v-if="abrir" class="pa-3">
+            <v-card-text class="gray pb-0 pt-0 elevation-2" >
                 <v-layout>
-                  <v-flex xs12 sm4>
+                  <v-flex xs12 sm3>
                     <v-text-field
-                      label="Servicio Taller"
+                      label="Placa"
                       class="chirrete-text-field"
                     ></v-text-field>
                   </v-flex>
-                  <!--<v-flex xs12 sm3>
-                    <v-select
-                        v-bind:items="states"
-                        v-model="a1"
-                        label="Marca"
-                        autocomplete
-                    ></v-select>
-                 </v-flex>-->
-                  <v-flex xs12 sm2>
+                  <v-flex xs12 sm3>
                     <v-text-field
-                      label="Duracion"
+                      label="Referencia"
                       class="chirrete-text-field"
                     ></v-text-field>
                   </v-flex>
-                  <v-flex xs12 sm5></v-flex>
+                  <v-flex xs12 sm3>
+                    <v-text-field
+                      label="Marca"
+                      class="chirrete-text-field"
+                    ></v-text-field>
+                  </v-flex>
+                  <v-flex xs12 sm1></v-flex>
                   <v-btn dark fab small class="pink" @click.native="Agregar" v-model="abrir">
                       <v-icon>save</v-icon>
                   </v-btn>
+                </v-layout>
+                <v-layout>
+                  <v-flex xs12 sm3>
+                    <v-text-field
+                      label="Color"
+                      class="chirrete-text-field"
+                    ></v-text-field>
+                  </v-flex>
+                  <v-flex xs12 sm3>
+                    <v-text-field
+                      label="Propietario"
+                      class="chirrete-text-field"
+                    ></v-text-field>
+                  </v-flex>
+                  <v-flex xs12 sm3>
+                    <v-text-field
+                      label="Km"
+                      class="chirrete-text-field"
+                    ></v-text-field>
+                  </v-flex>
+                  <v-flex xs12 sm1></v-flex>
                   <v-btn dark fab small class="pink" @click.native="Cerrar" v-model="abrir">
                       <v-icon>cancel</v-icon>
                   </v-btn>
                 </v-layout>
-                <!--<v-layout>
-                  <v-flex xs12 sm3>
-                    <v-text-field
-                      label="Eliminar"
-                      class="chirrete-text-field"
-                    ></v-text-field>
-                  </v-flex>
-                  <v-flex xs12 sm3>
-                    <v-text-field
-                      label="Telefono"
-                      class="chirrete-text-field"
-                    ></v-text-field>
-                  </v-flex>
-                  <v-flex xs12 sm3>
-                    <v-text-field
-                      label="e-mail"
-                      class="chirrete-text-field"
-                    ></v-text-field>
-                  </v-flex>
-                  <v-flex xs12 sm10></v-flex>
-                  <v-btn dark fab small class="pink" @click.native="Cerrar" v-model="abrir">
-                      <v-icon>cancel</v-icon>
-                  </v-btn>
-                </v-layout>-->
                 <v-spacer></v-spacer>
               </v-card-text>
             </v-layout>
             <v-layout class="pa-3">
               <v-data-table
-                v-bind:headers="headers"
-                :items="items"
-                hide-actions
-                class="elevation-1 caption"
-                v-bind:search="search"
-              >
-               <template slot="items" scope="props">
-                 <td style="font-weight: bold;">{{ props.item.servicio|uppercase}}</td>
-                 <td class="caption">{{ props.item.duracion|uppercase}}</td>
-                 <td class="text-xs-right" style="width:5px">
-                   <v-btn dark fab small class="cyan" @click.native="Abrir" v-model="abrir">
+              v-bind:headers="headers"
+              :items="items"
+              hide-actions
+              class="elevation-1 caption"
+              v-bind:search="search"
+        >
+              <template slot="items" scope="props">
+                  <td style="font-weight: bold;">{{ props.item.placa | uppercase}}</td>
+                <td class="caption">{{ props.item.referencia |uppercase}}</td>
+                <td class="text-xs-left caption">{{ props.item.propietario}}</td>
+                <td class="text-xs-left">{{ props.item.color | uppercase}}</td>
+                <td class="text-xs-right" style="width:5px">
+                  <v-btn dark fab small class="cyan" @click.native="Abrir" v-model="abrir">
                       <v-icon>edit</v-icon>                   
-                   </v-btn>
-                 </td>
-                 <td class="text-xs-right">
+                    </v-btn>
+                </td>
+                <td class="text-xs-right">
                     <v-btn dark fab small class="green" @click.native="Abrir" v-model="abrir">
                       <v-icon>visibility</v-icon>
                     </v-btn>
-                 </td>
-                 <td class="text-xs-right">
+                </td>
+                <td class="text-xs-right">
                     <v-btn dark fab small class="grey" @click.native="Eliminar" v-model="abrir">
                       <v-icon>delete</v-icon>
                    </v-btn>
-                 </td>
-               </template>
-            </v-data-table> 
+                </td>
+              </template>
+          </v-data-table> 
         </v-layout> 
         </v-card>
       </v-flex>
@@ -152,52 +140,55 @@
   export default {
     data () {
       return {
-          
           abrir:false,
-          servicio:null,
-          duracion:null,
+          placa:null,
+          nombre:null,
+          propietario:null,
+          color:null,
           headers: [
           {
-            text: 'Servicio Taller',
+            text: 'Placa',
             align: 'left',
             sortable: false,
-            value: 'servicio'
+            value: 'cedula'
           },
           {
-            text: 'Duracion(min)',
+            text: 'Referencia',
             align: 'left',
             sortable: false,
-            value: 'duracion'
+            value: 'nombre'
+          },
+          {
+            text: 'Propietario',
+            align: 'left',
+            sortable: false,
+            value: 'telefono'
+          },
+          {
+            text: 'Color',
+            align: 'left',
+            sortable: false,
+            value: 'color',
           },
         ],
         items: [
           {
-            servicio:"CAMBIO ACEITE MOTOR",
-            duracion:"10",
+            placa:"MHK25D",
+            referencia:"vivar-125",
+            propietario:"Carlos andres Tamayo Benjumea",
+            color:"negro",
           },
           {
-            servicio:"CAMBIO VALVULINA DE TRANSMISION",
-            duracion:"10",
+            placa:"xuy20d",
+            referencia:"t115 fi",
+            propietario:"Joiner Eliecer Sanchez",
+            color:"negro",
           },
           {
-           servicio:"CAMBIO DE FILTRO ACEITE",
-            duracion:"10",
-          },
-          {
-            servicio:"CAMBIO CORREA TRANSMISION",
-            duracion:"60",
-          },
-          {
-            servicio:"CAMBIO BUJIA",
-            duracion:"10",
-          },
-          {
-            servicio:"CAMBIO FILTRO AIRE",
-            duracion:"20",
-          },
-          {
-            servicio:"CALIBRAR VALVULAS",
-            duracion:"40",
+            placa:"kzf67a",
+            referencia:"rx115",
+            propietario:"Jose Caceres",
+            color:"negro",
           },
         ] 
       }
