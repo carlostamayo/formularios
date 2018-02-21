@@ -4,68 +4,15 @@
       <v-flex xs12>
         <v-card>
           <v-toolbar class="indigo" dark>
-            <v-toolbar-title>Datos de usuario</v-toolbar-title>
+            <v-toolbar-title class="display">Datos de usuario</v-toolbar-title>
           </v-toolbar>
-          <!--<v-card-text>
-            <span class="title">Información personal</span>
-            <layout row wrap>
-            <v-flex xs2>
-             <v-text-field
-               label="Cédula"
-               class="mt-5"
-               v-model="cedula"
-               required
-            ></v-text-field>
-            </v-flex>
-            <v-flex xs4></v-flex>
-            <v-flex xs4>
-             <v-text-field
-               label="Nombre"
-               v-model="nombre"
-               required
-             ></v-text-field>
-            </v-flex>
-            </layout>
-            <v-text-field
-              label="Apellidos"
-              v-model="apellidos"
-              required
-            ></v-text-field>
-            <v-text-field
-              label="Dirección"
-              v-model="direccion"
-              required
-            ></v-text-field>
-            <v-text-field
-              label="Ciudad"
-              v-model="ciudad"
-              required
-            ></v-text-field>
-            <v-text-field
-              label="Telefono"
-              v-model="telefono"
-              required
-            ></v-text-field>
-            <v-text-field
-              label="Email"
-              v-model="email"
-            ></v-text-field>
-            <v-select
-             label="Rol"
-             v-model="role"
-            :items="items"
-            :error-messages="selectErrors"
-            @change="$v.select.$touch()"
-            @blur="$v.select.$touch()"
-            required
-            ></v-select>
-            <small>*Estos campos son requeridos</small>
-          </v-card-text>-->
           <v-container fluid>
             <v-layout row>
               <v-flex xs1></v-flex>
               <v-flex xs2>
                 <v-text-field
+                    
+                    class="subheading"
                     label="Cedula"
                 ></v-text-field>
               </v-flex>
@@ -135,6 +82,7 @@
 </template>
 
 <style scoped>
+ 
 </style>
 
 <script>

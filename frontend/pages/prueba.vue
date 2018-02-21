@@ -1,202 +1,249 @@
 <template>
-  <div>
-   <v-layout wrap>
-    <v-btn dark fab class="cyan" @click.native="Agregar" v-model="abrir">
-      <v-icon>add</v-icon>
-    </v-btn>
-    <v-flex x12 sm1></v-flex>
-    <v-flex xs12 sm2>
-      <v-text-field
-          label="Cedula"
-          v-model="cedula"
-          @onkeypress="Agregar" 
-      ></v-text-field>
-      </v-flex xs12 sm1>
-    <v-flex xs12 sm1></v-flex>
-    <v-flex xs12 sm4>
-      <v-text-field
-         label="Nombre"
-      ></v-text-field>
+  <v-container fluid grid-list-lg>
+    <v-layout row wrap>
+      <v-flex xs12 sm12 >
+        <v-card>
+          <v-toolbar class="cyan" extended>
+            <v-toolbar-side-icon></v-toolbar-side-icon>
+            <v-toolbar-title class="white--text">Prueba</v-toolbar-title>
+            <v-fab-transition>
+              <v-btn
+                class="indigo"
+                fab
+                dark
+                small
+                absolute
+                bottom
+                right
+                v-show="!hidden"
+                 @click.native="Abrir"
+              >
+                <v-icon>add</v-icon>
+              </v-btn>
+            </v-fab-transition>
+          </v-toolbar>
+          </v-card-text>
+          	
+          	<v-card-text class="gray pa-3">
+            	<v-layout>
+          			<v-flex xs12 sm2>
+          				<v-text-field
+          					label="Cedula"
+          					class="chirrete-text-field"
+          				></v-text-field>
+          			</v-flex>
+          			<v-flex xs12 sm4>
+          				<v-text-field
+          					label="Nombre"
+          					class="chirrete-text-field"
+          				></v-text-field>
+          			</v-flex>
+          			<v-flex xs12 sm1>
+          				<v-btn>
+          					<v-icon>search</v-icon>
+          				</v-btn>
+          			</v-flex>
+          		</v-layout>
+          	</v-card-text>
+
+          	<v-layout v-if="abrir" class="pa-2">
+          		<v-card-text class="gray pa-3">
+            		<v-layout>
+          				<v-flex xs12 sm2>
+          					<v-text-field
+          						label="Cedula"
+          						class="chirrete-text-field"
+          					></v-text-field>
+          				</v-flex>
+          				<v-flex xs12 sm4>
+          					<v-text-field
+          						label="Nombre"
+          						class="chirrete-text-field"
+          					></v-text-field>
+          				</v-flex>
+          				<v-flex xs12 sm4>
+          					<v-text-field
+          						label="Direccion"
+          						class="chirrete-text-field"
+          					></v-text-field>
+          				</v-flex>
+          				<v-flex xs12 sm1></v-flex>
+          				<v-btn dark fab small class="pink" @click.native="Agregar" v-model="abrir">
+                			<v-icon>save</v-icon>
+            			</v-btn>
+            		</v-layout>
+          			<v-layout>
+          				<v-flex xs12 sm2>
+          					<v-text-field
+          						label="Ciudad"
+          						class="chirrete-text-field"
+          					></v-text-field>
+          				</v-flex>
+          				<v-flex xs12 sm4>
+          					<v-text-field
+          						label="Telefono"
+          						class="chirrete-text-field"
+          					></v-text-field>
+          				</v-flex>
+          				<v-flex xs12 sm4>
+          					<v-text-field
+          						label="e-mail"
+          						class="chirrete-text-field"
+          					></v-text-field>
+          				</v-flex>
+          				<v-flex xs12 sm1></v-flex>
+          				<v-btn dark fab small class="pink" @click.native="Cerrar" v-model="abrir">
+                			<v-icon>cancel</v-icon>
+            			</v-btn>
+          			</v-layout>
+          			<v-spacer></v-spacer>
+          		</v-card-text>
+          	</v-layout>
+          	<v-layout class="pa-3">
+          		<v-data-table
+        			v-bind:headers="headers"
+        			:items="items"
+        			hide-actions
+        			class="elevation-1 caption"
+       				v-bind:search="search"
+				>
+   					  <template slot="items" scope="props">
+       				    <td style="font-weight: bold;">{{ props.item.cedula }}</td>
+       					<td class="caption">{{ props.item.nombre}}</td>
+       					<td class="text-xs-left caption">{{ props.item.telefono}}</td>
+       					<td class="text-xs-left">{{ props.item.direccion}}</td>
+       					<td class="text-xs-right" style="width:5px">
+       						<v-btn dark fab small class="cyan" @click.native="Abrir" v-model="abrir">
+            					<v-icon>edit</v-icon>          					
+            				</v-btn>
+        				</td>
+        				<td class="text-xs-right">
+          					<v-btn dark fab small class="green" @click.native="Abrir" v-model="abrir">
+            					<v-icon>visibility</v-icon>
+          					</v-btn>
+       					</td>
+			        	<td class="text-xs-right">
+			            	<v-btn dark fab small class="grey" @click.native="Eliminar" v-model="abrir">
+				            	<v-icon>delete</v-icon>
+				        	 </v-btn>
+        				</td>
+      				</template>
+   				</v-data-table>	
+   			</v-layout>	
+        </v-card>
       </v-flex>
-      <v-spacer></v-spacer>
-      <v-btn icon>
-        <v-icon>search</v-icon>
-      </v-btn>
     </v-layout>
-    <br><br>
-    <template>
-  <div>
-    <v-data-table
-      v-bind:headers="headers"
-      v-bind:items="items"
-      v-bind:search="search"
-      v-bind:pagination.sync="pagination"
-      hide-actions
-      class="elevation-1"
-    >
-      <template slot="headerCell" scope="props">
-        <span v-tooltip:bottom="{ 'html': props.header.text }">
-          {{ props.header.text }}
-        </span>
-      </template>
-      <template slot="items" scope="props">
-        <td>{{ props.item.name }}</td>
-        <td  class="text-xs-right">{{ props.item.calories }}</td>
-        <td  class="text-xs-right">{{ props.item.fat }}</td>
-        <td  class="text-xs-right">{{ props.item.carbs }}</td>
-        <td  class="text-xs-right">{{ props.item.protein }}</td>
-        <td  class="text-xs-right">{{ props.item.sodium }}</td>
-        <td  class="text-xs-right">{{ props.item.calcium }}</td>
-        <td  class="text-xs-right">{{ props.item.iron }}</td>
-      </template>
-    </v-data-table>
-    <div class="text-xs-center pt-2">
-      <v-pagination v-model="pagination.page" :length="Math.ceil(this.items.length / pagination.rowsPerPage)"></v-pagination>
-    </div>
-  </div>
+  </v-container>
 </template>
-
-    </div>
-</template>
-
-
-
 <script>
   export default {
     data () {
       return {
-        search: '',
-        pagination: {},
-        selected: [],
-        headers: [
+          
+          abrir:false,
+          cedula:null,
+          nombre:null,
+          abrir:false,
+          headers: [
           {
-            text: 'Dessert (100g serving)',
+            text: 'Cedula',
             align: 'left',
             sortable: false,
-            value: 'name'
+            value: 'cedula'
           },
-          { text: 'Calories', value: 'calories' },
-          { text: 'Fat (g)', value: 'fat' },
-          { text: 'Carbs (g)', value: 'carbs' },
-          { text: 'Protein (g)', value: 'protein' },
-          { text: 'Sodium (mg)', value: 'sodium' },
-          { text: 'Calcium (%)', value: 'calcium' },
-          { text: 'Iron (%)', value: 'iron' }
+          {
+            text: 'Nombre',
+            align: 'left',
+            sortable: false,
+            value: 'nombre'
+          },
+          {
+            text: 'Direccion',
+            align: 'left',
+            sortable: false,
+            value: 'telefono'
+          },
+          {
+            text: 'Telefono',
+            align: 'left',
+            sortable: false,
+            value: 'direccion'
+          },
         ],
         items: [
           {
-            value: false,
-            name: 'Frozen Yogurt',
-            calories: 159,
-            fat: 6.0,
-            carbs: 24,
-            protein: 4.0,
-            sodium: 87,
-            calcium: '14%',
-            iron: '1%'
+            cedula:"1065864163",
+            nombre:"Carlos  Andres Tamayo Benjumea",
+            telefono:"3136817175",
+            direccion:"Calle 12 # 26-46",
           },
           {
-            value: false,
-            name: 'Ice cream sandwich',
-            calories: 237,
-            fat: 9.0,
-            carbs: 37,
-            protein: 4.3,
-            sodium: 129,
-            calcium: '8%',
-            iron: '1%'
+            cedula:"1065864163",
+            nombre:"Carlos  Andres Tamayo Benjumea",
+            telefono:"3136817175",
+            direccion:"Calle 12 # 26-46",
           },
           {
-            value: false,
-            name: 'Eclair',
-            calories: 262,
-            fat: 16.0,
-            carbs: 23,
-            protein: 6.0,
-            sodium: 337,
-            calcium: '6%',
-            iron: '7%'
+            cedula:"1065864163",
+            nombre:"Jose del Carmen aristizabal zabaleta fernandez de la peña",
+            telefono:"3136817175",
+            direccion:"Calle 12 # 26-46",
           },
           {
-            value: false,
-            name: 'Cupcake',
-            calories: 305,
-            fat: 3.7,
-            carbs: 67,
-            protein: 4.3,
-            sodium: 413,
-            calcium: '3%',
-            iron: '8%'
+            cedula:"1065864163",
+            nombre:"Carlos  Andres Tamayo Benjumea",
+            telefono:"3136817175",
+            direccion:"Calle 12 # 26-46",
           },
           {
-            value: false,
-            name: 'Gingerbread',
-            calories: 356,
-            fat: 16.0,
-            carbs: 49,
-            protein: 3.9,
-            sodium: 327,
-            calcium: '7%',
-            iron: '16%'
+            cedula:"1065864163",
+            nombre:"Carlos  Andres Tamayo Benjumea",
+            telefono:"3136817175",
+            direccion:"Calle 12 # 26-46",
           },
           {
-            value: false,
-            name: 'Jelly bean',
-            calories: 375,
-            fat: 0.0,
-            carbs: 94,
-            protein: 0.0,
-            sodium: 50,
-            calcium: '0%',
-            iron: '0%'
+            cedula:"1065864163",
+            nombre:"Carlos  Andres Tamayo Benjumea",
+            telefono:"3136817175",
+            direccion:"Calle 12 # 26-46",
           },
           {
-            value: false,
-            name: 'Lollipop',
-            calories: 392,
-            fat: 0.2,
-            carbs: 98,
-            protein: 0,
-            sodium: 38,
-            calcium: '0%',
-            iron: '2%'
+            cedula:"1065864163",
+            nombre:"Carlos  Andres Tamayo Benjumea",
+            telefono:"3136817175",
+            direccion:"Calle 12 # 26-46",
           },
           {
-            value: false,
-            name: 'Honeycomb',
-            calories: 408,
-            fat: 3.2,
-            carbs: 87,
-            protein: 6.5,
-            sodium: 562,
-            calcium: '0%',
-            iron: '45%'
+            cedula:"1065864163",
+            nombre:"Carlos  Andres Tamayo Benjumea",
+            telefono:"3136817175",
+            direccion:"Calle 12 # 26-46",
           },
           {
-            value: false,
-            name: 'Donut',
-            calories: 452,
-            fat: 25.0,
-            carbs: 51,
-            protein: 4.9,
-            sodium: 326,
-            calcium: '2%',
-            iron: '22%'
+            cedula:"1065864163",
+            nombre:"Carlos  Andres Tamayo Benjumea",
+            telefono:"3136817175",
+            direccion:"Calle 12 # 26-46",
           },
-          {
-            value: false,
-            name: 'KitKat',
-            calories: 518,
-            fat: 26.0,
-            carbs: 65,
-            protein: 7,
-            sodium: 54,
-            calcium: '12%',
-            iron: '6%'
-          }
-        ]
+        ] 
       }
+    },
+    methods:{
+      Abrir(){
+        this.abrir=true
+        console.log(this.abrir)
+      },
+      Cerrar(){
+        this.abrir=false
+        console.log(this.abrir)
+      },
     }
   }
 </script>
 
+<style scoped>
+  .chirrete-text-field input{
+    font-size: 10px;
+    width: 10px;
+  }
+</style>
