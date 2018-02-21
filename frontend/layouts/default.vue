@@ -18,7 +18,7 @@ v-app(id="sandbox" :dark="dark" :light="!dark" standalone)
         v-list-tile-content
           v-list-tile-title Salir
 
-  v-toolbar(fixed class="indigo white--text ")
+  v-toolbar(fixed class="grey darken-2 white--text ")
     v-toolbar-side-icon(@click.native.stop="primaryDrawer.model = !primaryDrawer.model" v-if="primaryDrawer.type !== 'permanent'")
     v-toolbar-title {{ title }}
     <v-spacer></v-spacer>
@@ -53,7 +53,7 @@ v-app(id="sandbox" :dark="dark" :light="!dark" standalone)
           { icon: 'build', text: 'Orden de Trabajo', to: '/ordenTrabajo' },
           { icon: 'build', text: 'Agregar Orden de Trabajo', to: '/agregarOrdenTrabajo' },
           { icon: 'person', text: 'Usuarios', to: '/usuarios' },
-          { icon: 'settings', text: 'Tipo Moto', to: '/tipoMoto' },
+          { icon: 'motorcycle', text: 'Tipo Moto', to: '/tipoMoto' },
           { icon: 'motorcycle', text: 'Motocicleta', to: '/motocicleta' },
           { icon: 'build', text: 'Servicio Taller', to: '/serviciotaller' },
           { icon: 'motorcycle', text: 'Marca', to: '/marca' },

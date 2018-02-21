@@ -5,6 +5,7 @@
         <v-card>
           <v-toolbar class="cyan" >
             <!--<v-toolbar-side-icon></v-toolbar-side-icon>-->
+            <v-icon dark>person</v-icon>
             <v-toolbar-title class="white--text">Cliente</v-toolbar-title>
             <v-fab-transition>
               <v-btn

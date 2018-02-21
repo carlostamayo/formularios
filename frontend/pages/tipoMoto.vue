@@ -5,6 +5,7 @@
         <v-card>
           <v-toolbar class="cyan" >
             <!--<v-toolbar-side-icon></v-toolbar-side-icon>-->
+            <v-icon dark>motorcycle</v-icon>
             <v-toolbar-title class="white--text">Tipo de Moto</v-toolbar-title>
             <v-fab-transition>
               <v-btn

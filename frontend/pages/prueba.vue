@@ -2,13 +2,14 @@
   <v-container fluid grid-list-lg>
     <v-layout row wrap>
       <v-flex xs12 sm12 >
-        <v-card>
-          <v-toolbar class="cyan" >
+        <v-card >
+          <v-toolbar class="red accent-4" >
             <!--<v-toolbar-side-icon></v-toolbar-side-icon>-->
+            <v-icon dark>motorcycle</v-icon>
             <v-toolbar-title class="white--text">Prueba</v-toolbar-title>
             <v-fab-transition>
               <v-btn
-                class="indigo"
+                class="grey darken-2"
                 fab
                 dark
                 small
@@ -48,8 +49,8 @@
           		</v-layout>
           	</v-card-text>
           	</v-layout>
-          	<v-layout v-if="abrir" class="pa-3">
-          		<v-card-text class="gray pb-0 pt-0 elevation-2" >
+          	<v-layout v-if="abrir" class="pa-3 ">
+          		<v-card-text class="pb-0 pt-0 elevation-2" >
             		<v-layout>
           				<v-flex xs12 sm3>
           					<v-text-field
@@ -70,7 +71,7 @@
           					></v-text-field>
           				</v-flex>
           				<v-flex xs12 sm1></v-flex>
-          				<v-btn dark fab small class="pink" @click.native="Agregar" v-model="abrir">
+          				<v-btn dark fab small class="grey darken-2" @click.native="Agregar" v-model="abrir">
                 			<v-icon>save</v-icon>
             			</v-btn>
             		</v-layout>
@@ -94,7 +95,7 @@
           					></v-text-field>
           				</v-flex>
           				<v-flex xs12 sm1></v-flex>
-          				<v-btn dark fab small class="pink" @click.native="Cerrar" v-model="abrir">
+          				<v-btn dark fab small class="grey darken-2" @click.native="Cerrar" v-model="abrir">
                 			<v-icon>cancel</v-icon>
             			</v-btn>
           			</v-layout>
@@ -106,7 +107,7 @@
         			v-bind:headers="headers"
         			:items="items"
         			hide-actions
-        			class="elevation-1 caption"
+        			class="elevation-5 caption"
        				v-bind:search="search"
 				>
    					  <template slot="items" scope="props">
