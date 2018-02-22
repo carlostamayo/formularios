@@ -124,20 +124,20 @@
               v-bind:search="search"
         >
               <template slot="items" scope="props">
-                <td style="font-weight: bold;">{{ props.item.referencia |uppercase}}</td>
-                <td class="caption">{{ props.item.marca |uppercase}}</td>
-                <td class="text-xs-left caption">{{ props.item.cilindraje |uppercase}}</td>
-                <td class="text-xs-right" style="width:5px">
+                <td style="font-weight: bold; width:30%;">{{ props.item.referencia |uppercase}}</td>
+                <td class="" style="width:30%;">{{ props.item.marca |uppercase}}</td>
+                <td class="text-xs-left" style="width:30%;">{{ props.item.cilindraje |uppercase}}</td>
+                <td class="text-xs-right ma-0 pa-0 pl-2">
                   <v-btn dark fab small class="cyan" @click.native="Abrir" v-model="abrir">
                       <v-icon>edit</v-icon>                   
                     </v-btn>
                 </td>
-                <td class="text-xs-right">
+                <td class="text-xs-right ma-0 pa-0">
                     <v-btn dark fab small class="green" @click.native="Abrir" v-model="abrir">
                       <v-icon>visibility</v-icon>
                     </v-btn>
                 </td>
-                <td class="text-xs-right">
+                <td class="text-xs-right ma-0 pa-0">
                     <v-btn dark fab small class="grey" @click.native="Eliminar" v-model="abrir">
                       <v-icon>delete</v-icon>
                    </v-btn>

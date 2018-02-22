@@ -3,7 +3,7 @@
     <v-layout row wrap>
       <v-flex xs12 sm12 >
         <v-card >
-          <v-toolbar class="red accent-4" >
+          <v-toolbar class="red drken-1" >
             <!--<v-toolbar-side-icon></v-toolbar-side-icon>-->
             <v-icon dark>motorcycle</v-icon>
             <v-toolbar-title class="white--text">Prueba</v-toolbar-title>
@@ -112,20 +112,20 @@
 				>
    					  <template slot="items" scope="props">
        				    <td style="font-weight: bold;">{{ props.item.cedula }}</td>
-       					<td class="caption">{{ props.item.nombre}}</td>
+       					<td class="">{{ props.item.nombre}}</td>
        					<td class="text-xs-left caption">{{ props.item.telefono}}</td>
        					<td class="text-xs-left">{{ props.item.direccion}}</td>
-       					<td class="text-xs-right" style="width:5px">
+       					<td class="text-xs-right ma-0 pa-0 pl-2" style="width:5px">
        						<v-btn dark fab small class="cyan" @click.native="Abrir" v-model="abrir">
             					<v-icon>edit</v-icon>          					
             				</v-btn>
         				</td>
-        				<td class="text-xs-right">
+        				<td class="text-xs-right ma-0 pa-0">
           					<v-btn dark fab small class="green" @click.native="Abrir" v-model="abrir">
             					<v-icon>visibility</v-icon>
           					</v-btn>
        					</td>
-			        	<td class="text-xs-right">
+			        	<td class="text-xs-right ma-0 pa-0">
 			            	<v-btn dark fab small class="grey" @click.native="Eliminar" v-model="abrir">
 				            	<v-icon>delete</v-icon>
 				        	 </v-btn>

@@ -6,7 +6,7 @@
           <v-toolbar class="cyan" >
             <!--<v-toolbar-side-icon></v-toolbar-side-icon>-->
             <v-icon dark>motorcycle</v-icon>
-            <v-toolbar-title class="white--text">Motocicleta</v-toolbar-title>
+            <v-toolbar-title class="white--text">Tabla Mantenimiento</v-toolbar-title>
             <v-fab-transition>
               <v-btn
                 class="indigo"
@@ -25,47 +25,71 @@
           </v-toolbar>
           </v-card-text>
             
-          <v-layout class="pa-3 pt-4">
+            <v-layout class="pa-3 pt-4">
             <v-card-text class="gray pb-0 pt-0 elevation-2">
               <v-layout>
+                <v-flex xs12 sm3>
+                  <v-select
+                        v-bind:items="states"
+                        v-model="a1"
+                        label="Referencia"
+                        autocomplete
+                        class="chirrete-text-field"
+                    ></v-select>
+                </v-flex>
+                <v-flex xs12 sm2></v-flex>
+                <v-spacer></v-spacer>
+                <v-flex xs12 sm2 class="pa-3">
+                  <v-btn dark fab small class="pink" @click.native="Abrir" v-model="abrir">
+                      <v-icon>edit</v-icon>
+                  </v-btn>
+                  <v-btn dark fab small class="pink" @click.native="Abrir" v-model="abrir">
+                      <v-icon>visibility</v-icon>
+                  </v-btn>
+                </v-flex>
+                <!--<v-flex xs12 sm2>
+                  <v-select
+                    v-bind:items="states"
+                    v-model="a1"
+                    label="Marca"
+                    autocomplete
+                  ></v-select>
+                </v-flex>
                 <v-flex xs12 sm2>
                   <v-text-field
-                    label="Placa"
+                    label="Cilindraje"
                     class="chirrete-text-field"
                   ></v-text-field>
-                </v-flex>
-                <v-flex xs12 sm4>
-                  <v-text-field
-                    label="Propietario"
-                    class="chirrete-text-field"
-                  ></v-text-field>
-                </v-flex>
-                <v-spacer></v-spacer>
-                <v-btn fab large icon>
-                  <v-icon>search</v-icon>
-                </v-btn>
+                </v-flex>-->
+                
+                  <!--<v-spacer></v-spacer>
+                  <v-btn fab large icon>
+                    <v-icon>search</v-icon>
+                  </v-btn>-->
+                
               </v-layout>
             </v-card-text>
-          </v-layout>
-          
-          <v-layout v-if="abrir" class="pa-3">
-            <v-card-text class="gray pb-0 pt-0 elevation-2" >
+            </v-layout>
+            <v-layout v-if="abrir" class="pa-3">
+              <v-card-text class="gray pb-0 pt-0 elevation-2" >
                 <v-layout>
                   <v-flex xs12 sm3>
                     <v-text-field
-                      label="Placa"
+                      label="Referencia Motocicleta"
                       class="chirrete-text-field"
                     ></v-text-field>
                   </v-flex>
                   <v-flex xs12 sm3>
-                    <v-text-field
-                      label="Referencia"
-                      class="chirrete-text-field"
-                    ></v-text-field>
-                  </v-flex>
+                    <v-select
+                        v-bind:items="states"
+                        v-model="a1"
+                        label="Marca"
+                        autocomplete
+                    ></v-select>
+                 </v-flex>
                   <v-flex xs12 sm3>
                     <v-text-field
-                      label="Marca"
+                      label="Cilindraje"
                       class="chirrete-text-field"
                     ></v-text-field>
                   </v-flex>
@@ -73,31 +97,34 @@
                   <v-btn dark fab small class="pink" @click.native="Agregar" v-model="abrir">
                       <v-icon>save</v-icon>
                   </v-btn>
-                </v-layout>
-                <v-layout>
-                  <v-flex xs12 sm3>
-                    <v-text-field
-                      label="Color"
-                      class="chirrete-text-field"
-                    ></v-text-field>
-                  </v-flex>
-                  <v-flex xs12 sm3>
-                    <v-text-field
-                      label="Propietario"
-                      class="chirrete-text-field"
-                    ></v-text-field>
-                  </v-flex>
-                  <v-flex xs12 sm3>
-                    <v-text-field
-                      label="Km"
-                      class="chirrete-text-field"
-                    ></v-text-field>
-                  </v-flex>
-                  <v-flex xs12 sm1></v-flex>
                   <v-btn dark fab small class="pink" @click.native="Cerrar" v-model="abrir">
                       <v-icon>cancel</v-icon>
                   </v-btn>
                 </v-layout>
+                <!--<v-layout>
+                  <v-flex xs12 sm3>
+                    <v-text-field
+                      label="Eliminar"
+                      class="chirrete-text-field"
+                    ></v-text-field>
+                  </v-flex>
+                  <v-flex xs12 sm3>
+                    <v-text-field
+                      label="Telefono"
+                      class="chirrete-text-field"
+                    ></v-text-field>
+                  </v-flex>
+                  <v-flex xs12 sm3>
+                    <v-text-field
+                      label="e-mail"
+                      class="chirrete-text-field"
+                    ></v-text-field>
+                  </v-flex>
+                  <v-flex xs12 sm10></v-flex>
+                  <v-btn dark fab small class="pink" @click.native="Cerrar" v-model="abrir">
+                      <v-icon>cancel</v-icon>
+                  </v-btn>
+                </v-layout>-->
                 <v-spacer></v-spacer>
               </v-card-text>
             </v-layout>
@@ -110,25 +137,28 @@
               v-bind:search="search"
         >
               <template slot="items" scope="props">
-                  <td style="font-weight: bold; width:15%;">{{ props.item.placa | uppercase}}</td>
-                <td class="" style="width:15%;">{{ props.item.referencia |uppercase}}</td>
-                <td class="text-xs-left" style="width:40%;">{{ props.item.propietario}}</td>
-                <td class="text-xs-left" style="width:15%;">{{ props.item.color | uppercase}}</td>
-                <td class="text-xs-right ma-0 pa-0 pl-2">
+                <td class="red a" style="font-weight: bold;">{{ props.item.servicio|uppercase}}</td>
+                <td class="blue">{{ props.item.km |uppercase}}</td>
+                <td class="text-xs-left yellow">{{ props.item.tiempo |uppercase}}</td>
+                <td><v-checkbox label=""  
+                        v-model="props.item.aplica"
+                        value="" 
+                        hide-details></v-checkbox></td>
+                <!--<td class="text-xs-right" style="width:5px">
                   <v-btn dark fab small class="cyan" @click.native="Abrir" v-model="abrir">
                       <v-icon>edit</v-icon>                   
                     </v-btn>
                 </td>
-                <td class="text-xs-right ma-0 pa-0">
+                <td class="text-xs-right">
                     <v-btn dark fab small class="green" @click.native="Abrir" v-model="abrir">
                       <v-icon>visibility</v-icon>
                     </v-btn>
                 </td>
-                <td class="text-xs-right ma-0 pa-0">
+                <td class="text-xs-right">
                     <v-btn dark fab small class="grey" @click.native="Eliminar" v-model="abrir">
                       <v-icon>delete</v-icon>
                    </v-btn>
-                </td>
+                </td>-->
               </template>
           </v-data-table> 
         </v-layout> 
@@ -141,55 +171,67 @@
   export default {
     data () {
       return {
+          ex4:false,
           abrir:false,
-          placa:null,
-          nombre:null,
-          propietario:null,
-          color:null,
+          marca:null,
+          referencia:null,
+          cilindraje:null,
           headers: [
           {
-            text: 'Placa',
+            text: 'Servicio Taller',
             align: 'left',
             sortable: false,
-            value: 'cedula'
+            value: 'servicio'
           },
           {
-            text: 'Referencia',
+            text: 'Kilometros',
             align: 'left',
             sortable: false,
-            value: 'nombre'
+            value: 'km'
           },
           {
-            text: 'Propietario',
+            text: 'Tiempo',
             align: 'left',
             sortable: false,
-            value: 'telefono'
+            value: 'tiempo'
           },
           {
-            text: 'Color',
+            text: 'Aplica',
             align: 'left',
             sortable: false,
-            value: 'color',
+            value: 'aplica'
           },
         ],
         items: [
           {
-            placa:"MHK25D",
-            referencia:"vivar-125",
-            propietario:"Carlos andres Tamayo Benjumea",
-            color:"negro",
+            servicio:"cambio de caeite",
+            km:"2",
+            tiempo:"60 dias",
+            aplica:true,
           },
           {
-            placa:"xuy20d",
-            referencia:"t115 fi",
-            propietario:"Joiner Eliecer Sanchez",
-            color:"negro",
+            servicio:"cambio valvulina",
+            km:"2",
+            tiempo:"60 dias",
+            aplica:true,
           },
           {
-            placa:"kzf67a",
-            referencia:"rx115",
-            propietario:"Jose Caceres",
-            color:"negro",
+            servicio:"cambio bujia",
+            km:"2",
+            tiempo:"60 dias",
+            aplica:true,
+          },
+          {
+            servicio:"cambio filtro de caeite",
+            km:"2",
+            tiempo:"60 dias",
+            aplica:true,
+          },
+          {
+            servicio:"cambio de caeite",
+            km:"2",
+            tiempo:"60 dias",
+            aplica:true,
           },
         ] 
       }
@@ -211,5 +253,9 @@
   .chirrete-text-field input{
     font-size: 10px;
     width: 10px;
+  }
+
+  .a{
+    width:50%;
   }
 </style>

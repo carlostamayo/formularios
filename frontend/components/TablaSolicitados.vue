@@ -58,7 +58,6 @@
           {
             name: 'Cambio de Aceite', 
             modelo: "Solicitado",
-            value: true, 
           },
           {
             name: 'Calibrar Valvulas',

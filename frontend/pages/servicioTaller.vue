@@ -124,23 +124,23 @@
                 v-bind:search="search"
               >
                <template slot="items" scope="props">
-                 <td style="font-weight: bold;">{{ props.item.servicio|uppercase}}</td>
-                 <td class="caption">{{ props.item.duracion|uppercase}}</td>
-                 <td class="text-xs-right" style="width:5px">
-                   <v-btn dark fab small class="cyan" @click.native="Abrir" v-model="abrir">
+                 <td style="font-weight: bold;width:70%;">{{ props.item.servicio|uppercase}}</td>
+                 <td class="" style="width:20%;">{{ props.item.duracion|uppercase}}</td>
+                 <td class="text-xs-right ma-0 pa-0 pl-2">
+                  <v-btn dark fab small class="cyan" @click.native="Abrir" v-model="abrir">
                       <v-icon>edit</v-icon>                   
-                   </v-btn>
-                 </td>
-                 <td class="text-xs-right">
+                    </v-btn>
+                </td>
+                <td class="text-xs-right ma-0 pa-0">
                     <v-btn dark fab small class="green" @click.native="Abrir" v-model="abrir">
                       <v-icon>visibility</v-icon>
                     </v-btn>
-                 </td>
-                 <td class="text-xs-right">
+                </td>
+                <td class="text-xs-right ma-0 pa-0">
                     <v-btn dark fab small class="grey" @click.native="Eliminar" v-model="abrir">
                       <v-icon>delete</v-icon>
                    </v-btn>
-                 </td>
+                </td>
                </template>
             </v-data-table> 
         </v-layout> 

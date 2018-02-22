@@ -6,7 +6,7 @@
         class="elevation-1"
     >
       <template slot="items" scope="props">
-        <td style="font-weight: bold;" id="colum">{{ props.item.name }}</td>
+        <td style="font-weight: bold;">{{ props.item.name }}</td>
         <td class="text-xs-center"><v-radio v-model="props.item.modelo" value="A"></v-radio></td>
         <td class="text-xs-right"><v-radio v-model="props.item.modelo" value="B"></v-radio></td>
         <td class="text-xs-right"><v-radio v-model="props.item.modelo" value="C"></v-radio></td>
@@ -46,7 +46,7 @@
             modelo: "A",
           },
           {
-           name: 'SILLIN',
+            name: 'SILLIN',
             modelo: "A",
           },
           {
