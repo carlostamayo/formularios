@@ -8,8 +8,8 @@
     >
       <template slot="items" scope="props">
         <td style="font-weight: bold;">{{ props.item.name }}</td>
-        <td class="text-xs-center"><v-radio label="SI" v-model="props.item.modelo" value="SI"></v-radio></td>
-        <td class="text-xs-right"><v-radio label="NO" v-model="props.item.modelo" value="NO"></v-radio></td>
+        <td class=""><v-radio label="" v-model="props.item.modelo" value="SI"></v-radio></td>
+        <td class=""><v-radio label="" v-model="props.item.modelo" value="NO"></v-radio></td>
       </template>
    </v-data-table>
    
@@ -28,8 +28,8 @@
             sortable: false,
             value: 'name'
           },
-          //{ text: 'SI',sortable:false },
-          //{ text: 'NO', sortable:false},
+          { text: 'SI',align:"left",sortable:false },
+          { text: 'NO',align:"left",sortable:false},
         ],
         items: [
           {

@@ -7,8 +7,8 @@
     >
       <template slot="items" scope="props">
         <td style="font-weight: bold;">{{ props.item.name }}</td>
-        <td class="text-xs-center"><v-radio v-model="props.item.modelo" value="A"></v-radio></td>
-        <td class="text-xs-right"><v-radio v-model="props.item.modelo" value="B"></v-radio></td>
+        <td class="" style="align:center;"><v-radio v-model="props.item.modelo" value="A"></v-radio></td>
+        <td class="cyan"><v-radio v-model="props.item.modelo" value="B"></v-radio></td>
         <td class="text-xs-right"><v-radio v-model="props.item.modelo" value="C"></v-radio></td>
 
       </template>
@@ -27,9 +27,9 @@
             sortable: false,
             value: 'name'
           },
-          { text: 'A',sortable:false },
-          { text: 'B', sortable:false},
-          { text: 'C' ,sortable:false},
+          { text: '*A', align:"left",sortable:false },
+          { text: '*B', align:"left",sortable:false},
+          { text: '*C', align:"left",sortable:false},
           
         ],
         items: [

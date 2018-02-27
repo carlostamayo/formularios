@@ -59,6 +59,7 @@ v-app(id="sandbox" :dark="dark" :light="!dark" standalone)
           { icon: 'motorcycle', text: 'Marca', to: '/marca' },
           { icon: 'build', text: 'Tabla Mantenimiento', to: '/tablaMantenimiento' },
           { icon: 'person', text: 'Prueba', to: '/prueba' },
+          { icon: 'person', text: 'Prueba Data', to: '/pruebaDataTable' },
          ],
         title: 'Administración Jeromotos',
         icono:"build"

@@ -27,7 +27,7 @@
             
           <v-layout class="pa-3 pt-4">
             <v-card-text class="gray pb-0 pt-0 elevation-2">
-              <v-layout>
+              <v-layout xs6>
                 <v-flex xs12 sm2>
                   <v-text-field
                     label="Placa"

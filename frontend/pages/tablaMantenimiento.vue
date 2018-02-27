@@ -74,12 +74,15 @@
               <v-card-text class="gray pb-0 pt-0 elevation-2" >
                 <v-layout>
                   <v-flex xs12 sm3>
-                    <v-text-field
-                      label="Referencia Motocicleta"
-                      class="chirrete-text-field"
-                    ></v-text-field>
+                    <v-select
+                        v-bind:items="states"
+                        v-model="a1"
+                        label="Referencia"
+                        autocomplete
+                        class="chirrete-text-field"
+                    ></v-select>
                   </v-flex>
-                  <v-flex xs12 sm3>
+                  <!--<v-flex xs12 sm3>
                     <v-select
                         v-bind:items="states"
                         v-model="a1"
@@ -92,7 +95,7 @@
                       label="Cilindraje"
                       class="chirrete-text-field"
                     ></v-text-field>
-                  </v-flex>
+                  </v-flex>-->
                   <v-flex xs12 sm1></v-flex>
                   <v-btn dark fab small class="pink" @click.native="Agregar" v-model="abrir">
                       <v-icon>save</v-icon>
@@ -137,9 +140,13 @@
               v-bind:search="search"
         >
               <template slot="items" scope="props">
-                <td class="red a" style="font-weight: bold;">{{ props.item.servicio|uppercase}}</td>
-                <td class="blue">{{ props.item.km |uppercase}}</td>
-                <td class="text-xs-left yellow">{{ props.item.tiempo |uppercase}}</td>
+                <td class="" style="font-weight: bold;">{{ props.item.servicio|uppercase}}</td>
+                <td class="text-xs-center">
+                    <input type="text" maxlength="5" style="width:40px;" value=""></input>
+                </td>
+                <td class="text-xs-center">
+                    <input type="text" maxlength="2" style="width:20px;" value="NA"></input>
+                </td>
                 <td><v-checkbox label=""  
                         v-model="props.item.aplica"
                         value="" 
@@ -185,55 +192,55 @@
           },
           {
             text: 'Kilometros',
-            align: 'left',
+            align: 'center',
             sortable: false,
             value: 'km'
           },
           {
             text: 'Tiempo',
-            align: 'left',
+            align: 'center',
             sortable: false,
             value: 'tiempo'
           },
           {
             text: 'Aplica',
-            align: 'left',
+            align: 'center',
             sortable: false,
             value: 'aplica'
           },
         ],
         items: [
           {
-            servicio:"cambio de caeite",
-            km:"2",
-            tiempo:"60 dias",
+            servicio:"cambio de aceite",
+            km:"2000",
+            tiempo:"NA",
             aplica:true,
           },
           {
             servicio:"cambio valvulina",
-            km:"2",
-            tiempo:"60 dias",
+            km:"4000",
+            tiempo:"NA",
             aplica:true,
           },
           {
             servicio:"cambio bujia",
-            km:"2",
-            tiempo:"60 dias",
+            km:"6000",
+            tiempo:"NA",
             aplica:true,
           },
           {
-            servicio:"cambio filtro de caeite",
-            km:"2",
-            tiempo:"60 dias",
+            servicio:"cambio filtro de aceite",
+            km:"4000",
+            tiempo:"NA",
             aplica:true,
           },
           {
-            servicio:"cambio de caeite",
-            km:"2",
-            tiempo:"60 dias",
+            servicio:"cambio de liquido frenos",
+            km:"20000",
+            tiempo:"24",
             aplica:true,
           },
-        ] 
+        ],
       }
     },
     methods:{
@@ -253,9 +260,5 @@
   .chirrete-text-field input{
     font-size: 10px;
     width: 10px;
-  }
-
-  .a{
-    width:50%;
   }
 </style>

@@ -52,7 +52,7 @@
             sortable: false,
             value: 'name'
           },
-          { text: 'Solicitado',sortable:false },
+          { text: 'Solicitado',align:"center",sortable:false },
         ],
         items: [
           {

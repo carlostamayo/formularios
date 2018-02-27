@@ -125,7 +125,7 @@
               >
                <template slot="items" scope="props">
                  <td style="font-weight: bold;width:70%;">{{ props.item.servicio|uppercase}}</td>
-                 <td class="" style="width:20%;">{{ props.item.duracion|uppercase}}</td>
+                 <td class="text-xs-center" style="width:20%;">{{ props.item.duracion|uppercase}}</td>
                  <td class="text-xs-right ma-0 pa-0 pl-2">
                   <v-btn dark fab small class="cyan" @click.native="Abrir" v-model="abrir">
                       <v-icon>edit</v-icon>                   
@@ -166,7 +166,7 @@
           },
           {
             text: 'Duracion(min)',
-            align: 'left',
+            align: 'center',
             sortable: false,
             value: 'duracion'
           },
